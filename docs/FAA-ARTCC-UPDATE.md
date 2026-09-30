@@ -50,6 +50,18 @@ Current FAA ERAM reference available during this review:
 - Corrected the misspelled **Edmonton Center** label in the Salt Lake City sector data.
 - Added this tracking document so the FAA source, scope, and validation method are explicit before geometry changes are committed.
 
+## Point-level geometry changes made
+
+The first ARTCC geometry pass added FAA ARB vertices that were absent from the legacy polygons while preserving the existing IVAO-specific boundary points:
+
+- **Z​AU / Chicago:** added 5 missing high-altitude boundary vertices.
+- **ZME / Memphis:** added 5 missing high-altitude boundary vertices.
+- **ZMP / Minneapolis:** added 7 missing high-altitude boundary vertices.
+
+The coordinate additions were checked against the 28-day NASR ARB/ARB_SEG data effective **14 May 2026** available in the public data mirror used for the point-level comparison. The FAA's current NASR subscription page now identifies the **03 September 2026** cycle as the current cycle, so these edits should receive a final current-cycle confirmation before merge.
+
+The comparison also identified low-altitude-only vertices and ocean/foreign/FIR boundary records that are not yet being inserted into files whose existing structure does not distinguish those geometries. Those will be handled separately rather than mixing altitude structures or introducing unverified geometry.
+
 ## Next sector-data pass
 
 The remaining work is to reconcile each ARTCC's high/low boundary geometry and associated sector definitions with the current FAA NASR ARB data, while preserving the IVAO sector-file format and the repository's existing terminal/approach data.
