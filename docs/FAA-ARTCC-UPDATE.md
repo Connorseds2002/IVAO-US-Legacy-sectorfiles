@@ -62,6 +62,14 @@ The coordinate additions were checked against the 28-day NASR ARB/ARB_SEG data e
 
 The comparison also identified low-altitude-only vertices and ocean/foreign/FIR boundary records that are not yet being inserted into files whose existing structure does not distinguish those geometries. Those will be handled separately rather than mixing altitude structures or introducing unverified geometry.
 
+## Additional geometry added
+
+The ARTCC audit has now added explicit FAA ARB geometry overlays for high- and/or low-level boundaries where the legacy files were missing FAA records. These include boundary portions extending into Canadian/Mexican/Caribbean airspace and offshore/oceanic areas where those records are part of the FAA ARTCC boundary definition.
+
+The affected repository files now include FAA-reference geometry for **ZAB, ZAN, ZAU, ZBW, ZDC, ZDV, ZFW, ZHU, ZID, ZJX, ZKC, ZLA, ZLC, ZMA, ZME, ZMP, ZNY, ZOA, ZOB, ZSE and ZTL**. Existing IVAO geometry has been retained; the new records are clearly marked as FAA ARB overlays rather than silently replacing the legacy polygons.
+
+The FAA data used for these geometry additions is the publicly mirrored **14 May 2026** ARB/ARB_SEG snapshot. The FAA's published September 03, 2026 NASR page confirms that ARB remains an official current data group, but the September ARB ZIP is served as a binary download that could not be directly parsed in this environment. Therefore, the overlays are useful for the review and gap-filling pass, but should receive a final September-cycle coordinate diff before merge.
+
 ## Next sector-data pass
 
 The remaining work is to reconcile each ARTCC's high/low boundary geometry and associated sector definitions with the current FAA NASR ARB data, while preserving the IVAO sector-file format and the repository's existing terminal/approach data.
