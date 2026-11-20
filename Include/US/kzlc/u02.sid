@@ -1,0 +1,13 @@
+// U02 SIDs
+// Generated from FAA CIFP AIRAC 2612
+
+
+//// IDA3 ////
+U02;01;IDA3;U02;U02;
+IDA;IDA;<br>;
+//// END IDA3 ////
+
+//// PIH4 ////
+U02;19;PIH4;U02;U02;
+PIH;PIH;<br>;
+//// END PIH4 ////

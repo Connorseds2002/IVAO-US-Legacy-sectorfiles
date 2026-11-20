@@ -1,0 +1,15 @@
+// M46 SIDs
+// Generated from FAA CIFP AIRAC 2612
+
+
+//// CISPU1 ////
+M46;06;CISPU1;M46;M46;
+COLOK;COLOK;<br>;
+CISPU;CISPU;
+//// END CISPU1 ////
+
+//// CONUK1 ////
+M46;24;CONUK1;M46;M46;
+SITOY;SITOY;<br>;
+CONUK;CONUK;
+//// END CONUK1 ////

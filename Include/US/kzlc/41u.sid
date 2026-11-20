@@ -1,0 +1,17 @@
+// 41U SIDs
+// Generated from FAA CIFP AIRAC 2612
+
+
+//// WUXOT1 ////
+41U;21;WUXOT1;41U;41U;
+WUXOT;WUXOT;<br>;
+DTA;DTA;@10300;
+DTA;DTA;<br>;
+//// END WUXOT1 ////
+
+//// YMONT1 ////
+41U;03;YMONT1;41U;41U;
+SANPT;SANPT;<br>;
+YMONT;YMONT;@13000;
+YMONT;YMONT;<br>;
+//// END YMONT1 ////

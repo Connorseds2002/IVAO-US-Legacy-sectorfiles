@@ -18,14 +18,9 @@ TUS;TUS;
 //// DVT3 ////
 KDVT;07L:07R:25L:25R;DVT3;KDVT;KDVT;
 PXR;PXR;<br>;
-PXR;PXR;
+PXR;PXR;^4000;
 PXR;PXR;<br>;
-PXR;PXR;
-PXR;PXR;<br>;
-PXR;PXR;
-PXR;PXR;<br>;
-PXR;PXR;
-
+PXR;PXR;^4000;
 //// END DVT3 ////
 
 //// FTHLS6 ////

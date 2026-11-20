@@ -1,0 +1,9 @@
+// KHAF SIDs
+// Generated from FAA CIFP AIRAC 2612
+
+
+//// SEEMS1 ////
+KHAF;30;SEEMS1;KHAF;KHAF;
+SEEMS;SEEMS;<br>;
+SEEMS;SEEMS;^3500;
+//// END SEEMS1 ////

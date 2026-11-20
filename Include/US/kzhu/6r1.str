@@ -1,0 +1,17 @@
+// 6R1 STARs
+// Generated from FAA CIFP AIRAC 2612
+
+// 6R1 Approaches
+
+
+//// VDM07 ////
+6R1;07;VDM07;6R1;6R1;3;
+LCH;LCH;<br>;
+LCH;LCH;^2000;
+COFCI;COFCI;^1700;
+LCH;LCH;<br>;
+
+6R1;07;GA VDM07;6R1;6R1;5;
+LCH;LCH;<br>;
+LCH;LCH;^2000;
+//// END VDM07 ////

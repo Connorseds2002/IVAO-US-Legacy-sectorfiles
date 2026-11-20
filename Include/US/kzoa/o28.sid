@@ -1,0 +1,15 @@
+// O28 SIDs
+// Generated from FAA CIFP AIRAC 2612
+
+
+//// ENI1 ////
+O28;16;ENI1;O28;O28;
+VICOR;VICOR;<br>;
+ENI;ENI;
+//// END ENI1 ////
+
+//// FLUEN2 ////
+O28;34;FLUEN2;O28;O28;
+OOLEY;OOLEY;<br>;
+FLUEN;FLUEN;^6700;
+//// END FLUEN2 ////

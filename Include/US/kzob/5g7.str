@@ -1,0 +1,18 @@
+// 5G7 STARs
+// Generated from FAA CIFP AIRAC 2612
+
+// 5G7 Approaches
+
+
+//// RNV23 ////
+5G7;23;RNV23;5G7;5G7;3;
+CUDOD;CUDOD;<br>;
+CUDOD;CUDOD;^2400;
+ALPEW;ALPEW;^2300;
+FBC;FBC;<br>;
+CUDOD;CUDOD;
+
+5G7;23;GA RNV23;5G7;5G7;5;
+FBC;FBC;<br>;
+FBC;FBC;^2500;
+//// END RNV23 ////

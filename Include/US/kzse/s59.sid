@@ -1,0 +1,9 @@
+// S59 SIDs
+// Generated from FAA CIFP AIRAC 2612
+
+
+//// EYESE2 ////
+S59;15;EYESE2;S59;S59;
+EYESE;EYESE;<br>;
+EYESE;EYESE;^10000;
+//// END EYESE2 ////

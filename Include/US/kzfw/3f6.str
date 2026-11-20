@@ -1,0 +1,17 @@
+// 3F6 STARs
+// Generated from FAA CIFP AIRAC 2612
+
+// 3F6 Approaches
+
+
+//// RNV36 ////
+3F6;36;RNV36;3F6;3F6;3;
+GTH;GTH;<br>;
+GTH;GTH;^3600;
+GUTWO;GUTWO;^3500;
+GTH;GTH;<br>;
+
+3F6;36;GA RNV36;3F6;3F6;5;
+GTH;GTH;<br>;
+GTH;GTH;^3600;
+//// END RNV36 ////

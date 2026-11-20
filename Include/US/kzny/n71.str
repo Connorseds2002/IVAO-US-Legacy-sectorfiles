@@ -1,0 +1,16 @@
+// N71 STARs
+// Generated from FAA CIFP AIRAC 2612
+
+// N71 Approaches
+
+
+//// RNV28 ////
+N71;28;RNV28;N71;N71;3;
+LRP;LRP;<br>;
+LRP;LRP;^2600;
+SEBOY;SEBOY;^2300;
+
+N71;28;GA RNV28;N71;N71;5;
+OSAKE;OSAKE;<br>;
+GRAMO;GRAMO;^3000;
+//// END RNV28 ////

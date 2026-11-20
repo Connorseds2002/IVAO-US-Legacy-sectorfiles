@@ -1,0 +1,9 @@
+// O46 SIDs
+// Generated from FAA CIFP AIRAC 2612
+
+
+//// FOBRO1 ////
+O46;32;FOBRO1;O46;O46;
+DIMGE;DIMGE;<br>;
+FOBRO;FOBRO;^12000;
+//// END FOBRO1 ////

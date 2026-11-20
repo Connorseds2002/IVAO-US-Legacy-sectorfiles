@@ -1,0 +1,27 @@
+// 1G1 STARs
+// Generated from FAA CIFP AIRAC 2612
+
+// 1G1 Approaches
+
+
+//// VORA09 ////
+1G1;09;VORA09;1G1;1G1;3;
+DJB;DJB;<br>;
+DJB;DJB;^2200;
+DJB;DJB;<br>;
+
+1G1;09;GA VORA09;1G1;1G1;5;
+DJB;DJB;<br>;
+DJB;DJB;^3000;
+//// END VORA09 ////
+
+//// VORA27 ////
+1G1;27;VORA27;1G1;1G1;3;
+DJB;DJB;<br>;
+DJB;DJB;^2200;
+DJB;DJB;<br>;
+
+1G1;27;GA VORA27;1G1;1G1;5;
+DJB;DJB;<br>;
+DJB;DJB;^3000;
+//// END VORA27 ////
