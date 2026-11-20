@@ -1,0 +1,17 @@
+// 26N STARs
+// Generated from FAA CIFP AIRAC 2612
+
+// 26N Approaches
+
+
+//// GPS06 ////
+26N;06;GPS06;26N;26N;3;
+SIE;SIE;<br>;
+SIE;SIE;^2000;
+BRIGO;BRIGO;^1700;
+SIE;SIE;<br>;
+
+26N;06;GA GPS06;26N;26N;5;
+SIE;SIE;<br>;
+SIE;SIE;^2000;
+//// END GPS06 ////

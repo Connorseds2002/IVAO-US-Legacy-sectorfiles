@@ -2,8 +2,12 @@
 // Auto-generated 3/20/2025 by Wes Sleeman (XA)
 
 
-//// FEGBA2 ////
-KORS;16;FEGBA2;KORS;KORS;
+//// FEGBA3 ////
+KORS;16;FEGBA3;KORS;KORS;
 FEGBA;FEGBA;<br>;
+//// END FEGBA3 ////
 
-//// END FEGBA2 ////
+//// SQURL2 ////
+KORS;34;SQURL2;KORS;KORS;
+SQURL;SQURL;<br>;
+//// END SQURL2 ////

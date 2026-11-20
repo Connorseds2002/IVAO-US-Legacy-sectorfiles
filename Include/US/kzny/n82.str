@@ -1,0 +1,17 @@
+// N82 STARs
+// Generated from FAA CIFP AIRAC 2612
+
+// N82 Approaches
+
+
+//// VDM05 ////
+N82;05;VDM05;N82;N82;3;
+HUO;HUO;<br>;
+HUO;HUO;^3500;
+ETINY;ETINY;^2000;
+HUO;HUO;<br>;
+
+N82;05;GA VDM05;N82;N82;5;
+HUO;HUO;<br>;
+HUO;HUO;^3500;
+//// END VDM05 ////

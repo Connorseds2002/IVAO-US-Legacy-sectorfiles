@@ -1,0 +1,16 @@
+// 44C STARs
+// Generated from FAA CIFP AIRAC 2612
+
+// 44C Approaches
+
+
+//// VORA07 ////
+44C;07;VORA07;44C;44C;3;
+JVL;JVL;<br>;
+JVL;JVL;^2700;
+JVL;JVL;<br>;
+
+44C;07;GA VORA07;44C;44C;5;
+JVL;JVL;<br>;
+JVL;JVL;^2700;
+//// END VORA07 ////
