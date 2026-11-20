@@ -1,0 +1,48 @@
+name: Release sector files
+
+# Builds one zip per ARTCC/FIR plus a full US zip (US-ALL.zip) and publishes
+# them as a GitHub release every time main changes (e.g. when an AIRAC PR is
+# merged). Can also be run by hand from the Actions tab.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Include/**"
+      - "*.isc"
+      - ".github/scripts/build_release.py"
+      - ".github/workflows/release.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build zips
+        id: build
+        run: python3 .github/scripts/build_release.py dist >> "$GITHUB_OUTPUT"
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CYCLE: ${{ steps.build.outputs.cycle }}
+        run: |
+          date=$(date -u +%Y-%m-%d)
+          tag="airac-${CYCLE}-r${GITHUB_RUN_NUMBER}"
+          gh release create "$tag" dist/*.zip \
+            --target "$GITHUB_SHA" \
+            --title "AIRAC ${CYCLE} – US sector files (${date})" \
+            --notes-file dist/release_notes.md \
+            --latest
