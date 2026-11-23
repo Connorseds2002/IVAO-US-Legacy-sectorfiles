@@ -10,6 +10,7 @@ on:
       - "Include/**"
       - "*.isc"
       - ".github/scripts/build_release.py"
+      - ".github/scripts/build_combos.py"
       - ".github/workflows/release.yml"
   workflow_dispatch:
 

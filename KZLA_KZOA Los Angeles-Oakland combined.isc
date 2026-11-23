@@ -1,0 +1,136 @@
+[INFO]
+N036.07.12.748
+W119.49.14.000
+60
+48
+13
+US\KZLA_KZOA
+
+[ATIS]
+F;default.atis
+
+[DEFINE]
+TAXIWAY;#2f2f2f;
+APRON;#494949;
+OUTLINE;#2f2f2f;
+BUILDING;#646464;
+RUNWAY;#101010;
+STOPBAR;#B30000;
+//BURBANK_LAXW;#767676;
+//BURBANK_LAXE;#767676;
+LOS_ANGELES_LAXW;#767676;
+LOS_ANGELES_LAXE;#767676;
+//EMPIRE_LAXW;#767676;
+//EMPIRE_LAXE;#767676;
+//COAST_LAXW_SNAS;#767676;
+//COAST_LAXE_SNAS;#767676;
+//COAST_LAXW_SNAN;#767676;
+//COAST_LAXE_SNAN;#767676;
+SAN_DIEGO_WEST;#767676;
+//SAN_DIEGO_EAST;#767676;
+//DEL_REY_LAXW;#767676;
+//DEL_REY_LAXW_SNAN;#767676;
+//DEL_REY_LAXE;#767676;
+LAS_26L;#767676;
+//LAS_1L;#767676;
+//LAS_1L-26L;#767676;
+//LAS_8R;#767676;
+//BFL_APP;#767676;
+//SBA_APP;#767676;
+EDW_APP;#767676;
+LSV_APP;#767676;
+LSV_CTL;#767676;
+//NTD_APP;#767676;
+//YUM_APP;#767676;
+//PMD_APP;#767676;
+//NORCAL TRACON EAST/NORTH;#363636;
+//NORCAL TRACON WEST/SOUTH;#363636;
+//NORCAL TRACON MVA;#363636;
+//FRESNO RWY11 TRACON;#363636;
+//FRESNO RWY29 TRACON;#363636;
+//TRAVIS RAPCON SFOE;#363636;
+//TRAVIS RAPCON SFOW;#363636;
+
+[ATC]
+F;atc.atc
+
+[Airport]
+F;kzla\airac\airports.ap
+F;kzoa\airac\airports.ap
+
+[Runway]
+F;kzla\airac\runways.rw
+F;kzoa\airac\runways.rw
+
+[FIXES]
+F;kzla\airac\fixes.fix
+F;kzoa\airac\fixes.fix
+
+[NDB]
+F;kzla\airac\ndb.ndb
+F;kzoa\airac\ndb.ndb
+
+[VOR]
+F;kzla\airac\vor.vor
+F;kzoa\airac\vor.vor
+
+[HIGH AIRWAY]
+F;kzla\airac\awhigh.awh
+F;kzoa\airac\awhigh.awh
+
+[LOW AIRWAY]
+F;kzla\airac\awlow.awl
+F;kzoa\airac\awlow.awl
+
+[ARTCC]
+F;kzla\airspace\kzla.artcc
+F;kzoa\airspace\kzoa.artcc
+
+[ARTCC HIGH]
+F;kzla\airspace\app.artcc
+F;kzoa\airspace\app.artcc
+
+[ARTCC LOW]
+F;kzla\airspace\class b.artcc
+F;kzla\airspace\class c.artcc
+F;kzla\airspace\class d.artcc
+F;kzla\airspace\trsa.artcc
+F;kzoa\airspace\class b.artcc
+F;kzoa\airspace\class c.artcc
+F;kzoa\airspace\class d.artcc
+
+[GEO]
+F;kzla\klax.geo
+F;kzla\ksan.geo
+F;kzla\klas.geo
+F;kzla\kbur.geo
+F;kzla\knkx.geo
+F;kzla\geo\coast.geo
+//F;kzla\app\burbank_laxw.geo
+//F;kzla\app\empire_laxw.geo
+//F;kzla\app\san_diego_west.geo
+//F;kzla\app\coast_laxw_snas.geo
+//F;kzla\app\del_rey_laxw.geo
+//F;kzla\app\kbfl_app.geo
+//F;kzla\app\ksba_app.geo
+//F;kzla\app\edw_app.geo
+//F;kzla\app\ntd_app.geo
+//F;kzla\app\yum_app.geo
+//F;kzla\app\pmd_app.geo
+//F;kzla\app\burbank_laxe.geo
+//F;kzla\app\empire_laxe.geo
+//F;kzla\app\coast_laxe_snas.geo
+//F;kzla\app\coast_laxw_snan.geo
+//F;kzla\app\coast_laxe_snan.geo
+//F;kzla\app\del_rey_laxw_snan.geo
+//F;kzla\app\del_rey_laxe.geo
+F;kzoa\geo\coast.geo
+F;kzoa\geo\moa.geo
+F;kzoa\geo\restrict.geo
+F;kzoa\geo\warning.geo
+F;kzoa\geo\prohibit.geo
+F;kzoa\ad\ksfo.geo
+F;kzoa\ad\kfch.geo
+F;kzoa\ad\ksfo_ctrlines.geo
+F;kzoa\ad\ksfo_stopbar.geo
+F;kzoa\ad\ksfo_labels.geo

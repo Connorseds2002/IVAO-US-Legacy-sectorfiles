@@ -12,6 +12,7 @@ Writes the zips plus release_notes.md and prints "cycle=<YYNN>" for GitHub Actio
 import datetime as dt
 import os
 import re
+import subprocess
 import sys
 import zipfile
 
@@ -61,6 +62,10 @@ def include_dir(isc_path):
                 return m.group(1)
     return None
 
+
+# Generate the combined-ARTCC profiles (ZMA+ZJX, ZLA+ZOA) from the current data
+# so they ship in their own zips and in US-ALL.zip.
+subprocess.run([sys.executable, os.path.join(ROOT, ".github", "scripts", "build_combos.py")], check=True)
 
 us = os.path.join(ROOT, "Include", "US")
 folders = {d.lower(): d for d in os.listdir(us) if os.path.isdir(os.path.join(us, d))}
