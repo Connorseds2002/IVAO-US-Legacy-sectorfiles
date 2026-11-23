@@ -1,17 +1,15 @@
 name: Release sector files
 
 # Builds one zip per ARTCC/FIR plus a full US zip (US-ALL.zip) and publishes
-# them as a GitHub release every time main changes (e.g. when an AIRAC PR is
-# merged). Can also be run by hand from the Actions tab.
+# them as a GitHub release when sector data under Include/ changes on main
+# (i.e. when an AIRAC PR is merged). Changes to .isc profiles, scripts or this
+# workflow alone do not publish a release; they ship with the next AIRAC
+# release, or run this by hand from the Actions tab to release sooner.
 on:
   push:
     branches: [main]
     paths:
       - "Include/**"
-      - "*.isc"
-      - ".github/scripts/build_release.py"
-      - ".github/scripts/build_combos.py"
-      - ".github/workflows/release.yml"
   workflow_dispatch:
 
 permissions:
