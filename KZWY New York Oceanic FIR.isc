@@ -1,0 +1,56 @@
+[INFO]
+N032.21.50.500
+W064.40.43.300
+60
+51
+-15
+US\KZWY
+
+[ATIS]
+F;default.atis
+
+[DEFINE]
+TAXIWAY;#2f2f2f;
+APRON;#494949;
+OUTLINE;#2f2f2f;
+BUILDING;#646464;
+RUNWAY;#101010;
+
+[ATC]
+F;atc.atc
+
+[Airport]
+F;airac\airports.ap
+
+[Runway]
+F;airac\runways.rw
+
+[FIXES]
+F;airac\fixes.fix
+
+[NDB]
+F;airac\ndb.ndb
+
+[VOR]
+F;airac\vor.vor
+
+[HIGH AIRWAY]
+F;airac\awhigh.awh
+
+[LOW AIRWAY]
+F;airac\awlow.awl
+
+[ARTCC]
+F;airspace\kzwy.artcc
+
+[ARTCC HIGH]
+F;airspace\kzwyh.artcc
+
+[ARTCC LOW]
+F;airspace\kzwyl.artcc
+F;airspace\txkf_tma.artcc
+F;airspace\txkf_twr.artcc
+
+[GEO]
+F;geo\geo.geo
+F;ad\txkf.geo

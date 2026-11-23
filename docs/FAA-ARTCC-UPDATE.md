@@ -73,3 +73,20 @@ The FAA data used for these geometry additions is the publicly mirrored **14 May
 ## Next sector-data pass
 
 The remaining work is to reconcile each ARTCC's high/low boundary geometry and associated sector definitions with the current FAA NASR ARB data, while preserving the IVAO sector-file format and the repository's existing terminal/approach data.
+
+## ZWY / New York Oceanic (AIRAC 2612)
+
+`Include/US/kzwy` had not had FAA updates since 2022 and had no profile of its own. It now
+has `KZWY New York Oceanic FIR.isc` and was compared in full against the NASR 2612 CSV set
+(effective 26 Nov 2026):
+
+- **Boundary:** 23 of the 32 FAA ZWY FIR/CTA vertices match the existing geometry. The rest
+  differ mainly along 40°W, at the Gander/Moncton corner and at 25°N 69°07'W. The FAA FIR
+  and CTA are added as `KZWY FAA FIR` and `KZWY FAA CTA` overlays at the end of
+  `airspace/kzwy.artcc`; the existing IVAO geometry is kept.
+- **Fixes:** 255 match NASR. HARON moved 0.64 NM. Six fixes were renamed by the FAA at the
+  same positions (GOUGH→ITCHE, LEXIM→PADRK, OMALA→SWRTZ, OVAPI→MEANO, PERDO→JNFOX,
+  VESRA→BWTIE), and these plus six other new ZWY fixes are under the 2612 additions block.
+- **Routes:** 14 oceanic routes updated to the NASR route strings, and L335 and Y642 added
+  where they reach ZWY.
+- TXKF airport, runway 12/30 and the BDA VOR already matched NASR.

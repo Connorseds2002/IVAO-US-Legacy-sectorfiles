@@ -44,6 +44,7 @@ at the top and its data lands in `Include/US/...`. Then open the `.isc` profile 
 | `KZSE.isc` | Seattle ARTCC |
 | `KZTL.isc` | Atlanta ARTCC |
 | `KZAK Oakland Oceanic FIR.isc` | Oakland Oceanic FIR |
+| `KZWY New York Oceanic FIR.isc` | New York Oceanic FIR, including Bermuda (TXKF) |
 | `PAZA.isc` | Anchorage ARTCC |
 | `PHZH.isc` | Honolulu Control Facility |
 | `PGZU.isc` | Guam CERAP |
@@ -52,11 +53,8 @@ at the top and its data lands in `Include/US/...`. Then open the `.isc` profile 
 | `KZMA_KZJX Miami-Jacksonville combined.isc` | Miami + Jacksonville combined |
 | `KZLA_KZOA Los Angeles-Oakland combined.isc` | Los Angeles + Oakland combined |
 
-Notes:
-- `OCC North Atlantic.isc` points to `Include/CA/CZQX`, which isn't in this repo. It needs
-  the Canadian sector files installed alongside.
-- `Include/US/kzwy` (New York Oceanic) has no profile of its own. It's only shipped in
-  `US-ALL.zip`.
+Note: `OCC North Atlantic.isc` points to `Include/CA/CZQX`, which isn't in this repo. It
+needs the Canadian sector files installed alongside.
 
 ## Combined ARTCC profiles
 
@@ -129,6 +127,14 @@ merged automatically: review the PR and merge it when you're happy.
 
 ARTCC boundary geometry is compared against the FAA NASR ARTCC Boundary (ARB) data;
 see [`docs/FAA-ARTCC-UPDATE.md`](docs/FAA-ARTCC-UPDATE.md) for the method and status.
+
+New York Oceanic (`kzwy`) is updated the same way. FAA data covers its fixes, its
+oceanic routes in `airac/awhigh.awh` and the ZWY boundary (drawn as the `KZWY FAA FIR`
+and `KZWY FAA CTA` overlays in `airspace/kzwy.artcc`). In `awhigh.awh`, points inside
+ZWY are written by fix name and points outside it as coordinates with a `//NAME`
+comment, and each segment has a label at its midpoint (`R1-R2` where routes share
+a segment). Bermuda's own data (TXKF procedures, TMA, taxiways) isn't FAA data and is
+kept by hand.
 
 ## Releases
 
