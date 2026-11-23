@@ -27,3 +27,13 @@ always carry the current AIRAC data. They are not stored in the repo:
 
 To change what a combined profile loads, edit the single-ARTCC `.isc` files or the
 `COMBOS` list in the script, not the generated combined `.isc`.
+
+## Releases and the AIRAC number
+
+`AIRAC.txt` holds the AIRAC cycle the releases are labelled with (e.g. `2612`).
+Each AIRAC update PR changes it to the new cycle.
+
+Merging a change to `Include/`, an `.isc` file or `AIRAC.txt` publishes a release:
+
+- first release of a cycle: **AIRAC 2612 – US sector files (date)**, tag `airac-2612`
+- later releases in the same cycle: **… v2**, **… v3**, tags `airac-2612-v2`, `airac-2612-v3`

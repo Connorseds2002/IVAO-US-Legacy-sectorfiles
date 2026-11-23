@@ -8,6 +8,7 @@ The full zip holds every .isc file and the whole Include folder.
 
 usage: build_release.py <output dir>
 Writes the zips plus release_notes.md and prints "cycle=<YYNN>" for GitHub Actions.
+The cycle is read from AIRAC.txt at the repo root.
 """
 import datetime as dt
 import os
@@ -91,9 +92,14 @@ with zipfile.ZipFile(os.path.join(OUT, full), "w", zipfile.ZIP_DEFLATED) as z:
         z.write(os.path.join(ROOT, isc), isc)
     add_tree(z, "Include")
 
-# The data may be merged ahead of its effective date, so take the newer of the
-# cycle marked in the files and the cycle currently in effect.
-cycle = max(filter(None, [repo_cycle(), airac_for(dt.date.today())]))
+# The AIRAC number comes from AIRAC.txt at the repo root; each AIRAC update PR
+# changes it. Fallback if the file is missing: newest cycle marked in the data.
+cycle = None
+try:
+    with open(os.path.join(ROOT, "AIRAC.txt")) as fh:
+        cycle = re.search(r"\d{4}", fh.read()).group(0)
+except (OSError, AttributeError):
+    cycle = repo_cycle() or airac_for(dt.date.today())
 with open(os.path.join(OUT, "release_notes.md"), "w") as fh:
     fh.write(f"IVAO US legacy sector files, FAA data AIRAC {cycle}.\n\n")
     fh.write(f"- **{full}**: every ARTCC/FIR .isc file and the full `Include` folder\n")
