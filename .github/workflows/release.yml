@@ -77,7 +77,7 @@ jobs:
           TITLE: ${{ needs.release.outputs.title }}
           URL: ${{ needs.release.outputs.url }}
         run: |
-          # DISCORD_WEBHOOKS secret: one line per webhook, "<webhook url> [user id to ping]"
+          # DISCORD_WEBHOOKS secret: one line per webhook, "<webhook url> [user id, or &role id, to ping]"
           while read -r hook user; do
             [ -n "$hook" ] || continue
             # allowed_mentions: ping only the listed user, never @everyone/@here/roles
@@ -85,7 +85,9 @@ jobs:
                 username: "Legacy Sector Files",
                 avatar_url: "https://github.com/Connorseds2002.png",
                 content: ((if $id == "" then "" else "<@\($id)> " end) + "\($t) released: \($u)"),
-                allowed_mentions: {parse: [], users: (if $id == "" then [] else [$id] end)}
+                allowed_mentions: {parse: [],
+                  users: (if $id == "" or ($id | startswith("&")) then [] else [$id] end),
+                  roles: (if ($id | startswith("&")) then [$id[1:]] else [] end)}
               }' |
               curl -fsS -H "Content-Type: application/json" -d @- "$hook" \
               || echo "::warning::A Discord webhook post failed"
