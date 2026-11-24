@@ -26,6 +26,9 @@ concurrency:
 jobs:
   release:
     runs-on: ubuntu-latest
+    outputs:
+      title: ${{ steps.publish.outputs.title }}
+      url: ${{ steps.publish.outputs.url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -38,6 +41,7 @@ jobs:
         run: python3 .github/scripts/build_release.py dist >> "$GITHUB_OUTPUT"
 
       - name: Publish release
+        id: publish
         env:
           GH_TOKEN: ${{ github.token }}
           CYCLE: ${{ steps.build.outputs.cycle }}
@@ -53,8 +57,34 @@ jobs:
             while gh release view "airac-${CYCLE}-v${v}" >/dev/null 2>&1; do v=$((v + 1)); done
             tag="airac-${CYCLE}-v${v}"; suffix=" v${v}"
           fi
+          title="AIRAC ${CYCLE} – US sector files (${date})${suffix}"
           gh release create "$tag" dist/*.zip \
             --target "$GITHUB_SHA" \
-            --title "AIRAC ${CYCLE} – US sector files (${date})${suffix}" \
+            --title "$title" \
             --notes-file dist/release_notes.md \
             --latest
+          echo "title=$title" >> "$GITHUB_OUTPUT"
+          echo "url=$(gh release view "$tag" --json url --jq .url)" >> "$GITHUB_OUTPUT"
+
+  # Runs only after the release job finished successfully.
+  notify:
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post to Discord
+        env:
+          WEBHOOKS: ${{ secrets.DISCORD_WEBHOOKS }}
+          TITLE: ${{ needs.release.outputs.title }}
+          URL: ${{ needs.release.outputs.url }}
+        run: |
+          # DISCORD_WEBHOOKS secret: one line per webhook, "<webhook url> [user id to ping]"
+          while read -r hook user; do
+            [ -n "$hook" ] || continue
+            # allowed_mentions: ping only the listed user, never @everyone/@here/roles
+            jq -n --arg t "$TITLE" --arg u "$URL" --arg id "$user" '{
+                content: ((if $id == "" then "" else "<@\($id)> " end) + "\($t) released: \($u)"),
+                allowed_mentions: {parse: [], users: (if $id == "" then [] else [$id] end)}
+              }' |
+              curl -fsS -H "Content-Type: application/json" -d @- "$hook" \
+              || echo "::warning::A Discord webhook post failed"
+          done <<< "$WEBHOOKS"
