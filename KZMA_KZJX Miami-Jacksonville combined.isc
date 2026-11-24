@@ -1,0 +1,146 @@
+[INFO]
+N027.53.31.400
+W081.20.31.210
+60
+53
+-5.5
+US\KZMA_KZJX
+
+[COLORSCHEME]
+F;kzma\ERAM.clr
+
+[ATIS]
+F;default.atis
+
+[DEFINE]
+TAXIWAY;#2f2f2f;
+APRON;#494949;
+OUTLINE;#2f2f2f;
+BUILDING;#646464;
+RUNWAY;#101010;
+//MIAMI TRACON (EAST OPS);#363636;
+//MIAMI TRACON (WEST OPS);#363636;
+//TAMPA TRACON (NORTH OPS);#363636;
+//TAMPA TRACON (SOUTH OPS);#363636;
+//PALM BEACH TRACON (EAST OPS);#363636;
+//PALM BEACH TRACON (WEST OPS);#363636;
+//FT MYERS TRACON (EAST OPS);#363636;
+//FT MYERS TRACON (WEST OPS);#363636;
+//ORLANDO TRACON;#363636;
+KHST RAPCON;#363636;
+KMIA TRACON;#363636;
+KMIA 26LR 27 FLOW;#363636;
+KMIA 30 FLOW;#363636;
+KMIA 12 FLOW;#363636;
+KMIA 08LR 09 FLOW;#363636;
+KPBI TRACON;#363636;
+KNQX TRACON;#363636;
+KRSW TRACON;#363636;
+KTPA TRACON;#363636;
+KMCO TRACON;#363636;
+MYGF APP;#363636;
+MYNN APP;#363636;
+MYNA CTR;#363636;
+MBPV APP;#363636;
+TRACON;#363636;
+
+[ATC]
+F;atc.atc
+
+[Airport]
+F;kzma\airac\airports.ap
+F;kzjx\airac\airports.ap
+
+[Runway]
+F;kzma\airac\runways.rw
+F;kzjx\airac\runways.rw
+
+[FIXES]
+F;kzma\airac\fixes.fix
+F;kzjx\airac\fixes.fix
+F;kzjx\airac\fixes2.fix
+
+[NDB]
+F;kzma\airac\ndb.ndb
+F;kzjx\airac\ndb.ndb
+
+[VOR]
+F;kzma\airac\vor.vor
+F;kzjx\airac\vor.VOR
+
+[HIGH AIRWAY]
+F;kzma\airac\awhigh.awh
+F;kzjx\airac\awhigh.awh
+
+[LOW AIRWAY]
+F;kzma\airac\awlow.awl
+F;kzjx\airac\awlow.awl
+
+[ARTCC]
+F;kzma\airspace\kzma.artcc
+F;kzjx\airspace\kzjx.artcc
+
+[ARTCC HIGH]
+F;kzma\airspace\kzma_high.artcc
+
+[ARTCC LOW]
+F;kzma\airspace\Class B.artcc
+F;kzma\airspace\Class C.artcc
+F;kzma\airspace\Class D.artcc
+//F;kzma\airspace\Mode C Veil.artcc
+F;kzjx\airspace\class b.artcc
+F;kzjx\airspace\class c.artcc
+F;kzjx\airspace\class d.artcc
+
+[GEO]
+F;kzma\geo\coast.geo
+F;kzma\ad\kmco.geo
+F;kzma\ad\ktpa.geo
+F;kzma\ad\kopf_centerlines.geo
+F;kzma\ad\kmia_centerlines.geo
+F;kzma\geo\restrict.geo
+F;kzma\geo\warning.geo
+F;kzma\geo\moa.geo
+F;kzma\app\mco.geo
+F;kzma\app\mia.geo
+F;kzma\app\pbi.geo
+F;kzma\app\nqx.geo
+F;kzma\app\rsw.geo
+F;kzma\app\tpa.geo
+F;kzma\app\mygf.geo
+F;kzma\app\mynn.geo
+F;kzma\app\mbpv.geo
+F;kzma\app\myna.geo
+//F;kzma\app\ftmyers_tracon_east.geo
+//F;kzma\app\ftmyers_tracon_west.geo
+//F;kzma\app\homestead_approach.geo
+//F;kzma\app\miami_tracon_east.geo
+//F;kzma\app\miami_tracon_west.geo
+//F;kzma\app\orlando_tracon.geo
+//F;kzma\app\palmbeach_tracon_east.geo
+//F;kzma\app\palmbeach_tracon_west.geo
+//F;kzma\app\tampa_tracon_north.geo
+//F;kzma\app\tampa_tracon_south.geo
+F;kzjx\ad\ktpa.geo
+F;kzjx\geo\coastlines.geo
+F;kzjx\geo\restrict.geo
+F;kzjx\geo\warning.geo
+F;kzjx\geo\moa.geo
+F;kzjx\geo\prohibit.geo
+//APP
+F;kzjx\app\cae.geo
+F;kzjx\app\clt.geo
+F;kzjx\app\chs.geo
+F;kzjx\app\dab.geo
+F;kzjx\app\flo.geo
+F;kzjx\app\jax.geo
+F;kzjx\app\mco.geo
+F;kzjx\app\myr.geo
+F;kzjx\app\nbc.geo
+F;kzjx\app\ozr.geo
+F;kzjx\app\pam.geo
+F;kzjx\app\ssc.geo
+F;kzjx\app\vld.geo
+F;kzjx\app\other.geo
+
+[FILLCOLOR]

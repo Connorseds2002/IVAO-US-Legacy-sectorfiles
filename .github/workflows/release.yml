@@ -1,16 +1,19 @@
 name: Release sector files
 
 # Builds one zip per ARTCC/FIR plus a full US zip (US-ALL.zip) and publishes
-# them as a GitHub release every time main changes (e.g. when an AIRAC PR is
-# merged). Can also be run by hand from the Actions tab.
+# them as a GitHub release when sector data or profiles change on main.
+# Workflow/README-only changes don't release. Can also be run from the Actions tab.
+#
+# The AIRAC number comes from AIRAC.txt. The first release for a cycle is
+# "AIRAC 2612 – US sector files (date)" (tag airac-2612); later releases for
+# the same cycle add " v2", " v3"... (tags airac-2612-v2, airac-2612-v3...).
 on:
   push:
     branches: [main]
     paths:
       - "Include/**"
       - "*.isc"
-      - ".github/scripts/build_release.py"
-      - ".github/workflows/release.yml"
+      - "AIRAC.txt"
   workflow_dispatch:
 
 permissions:
@@ -40,9 +43,18 @@ jobs:
           CYCLE: ${{ steps.build.outputs.cycle }}
         run: |
           date=$(date -u +%Y-%m-%d)
-          tag="airac-${CYCLE}-r${GITHUB_RUN_NUMBER}"
+          # Count earlier releases for this cycle (airac-2612, airac-2612-v2, airac-2612-r1...)
+          n=$(gh release list --limit 1000 --json tagName --jq \
+                "[.[].tagName | select(test(\"^airac-${CYCLE}(-.*)?$\"))] | length")
+          if [ "$n" -eq 0 ]; then
+            tag="airac-${CYCLE}"; suffix=""
+          else
+            v=$((n + 1))
+            while gh release view "airac-${CYCLE}-v${v}" >/dev/null 2>&1; do v=$((v + 1)); done
+            tag="airac-${CYCLE}-v${v}"; suffix=" v${v}"
+          fi
           gh release create "$tag" dist/*.zip \
             --target "$GITHUB_SHA" \
-            --title "AIRAC ${CYCLE} – US sector files (${date})" \
+            --title "AIRAC ${CYCLE} – US sector files (${date})${suffix}" \
             --notes-file dist/release_notes.md \
             --latest
