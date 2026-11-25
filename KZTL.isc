@@ -69,7 +69,7 @@ F;airspace\kztl.artcc
 F;airspace\app.artcc
 
 [ARTCC LOW]
-F;airspace\kztl_low.artcc
+//F;airspace\kztl_low.artcc
 F;airspace\class b.artcc
 
 F;airspace\class c.artcc
@@ -80,8 +80,8 @@ F;airspace\class b routes.geo
 F;geo\restrict.geo
 F;geo\moa.geo
 
-F;app\a80 east.geo
-F;app\a80 west.geo
+//F;app\a80 east.geo
+//F;app\a80 west.geo
 //F;app\clt north.geo
 //F;app\clt south.geo
 //F;app\avl tracon 17.geo

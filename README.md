@@ -44,7 +44,7 @@ at the top and its data lands in `Include/US/...`. Then open the `.isc` profile 
 | `KZSE.isc` | Seattle ARTCC |
 | `KZTL.isc` | Atlanta ARTCC |
 | `KZAK Oakland Oceanic FIR.isc` | Oakland Oceanic FIR |
-| `KZWY New York Oceanic FIR.isc` | New York Oceanic FIR, including Bermuda (TXKF) |
+| `KZWY New York Oceanic FIR.isc` | New York Oceanic FIR, including Bermuda (TXKF) and the main airports just outside its edges, for hand-offs |
 | `PAZA.isc` | Anchorage ARTCC |
 | `PHZH.isc` | Honolulu Control Facility |
 | `PGZU.isc` | Guam CERAP |

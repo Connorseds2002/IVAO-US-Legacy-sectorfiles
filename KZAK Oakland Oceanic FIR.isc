@@ -18,7 +18,7 @@ F;airac\fixes.fix
 [NDB]
 F;airac\ndb.ndb
 [VOR]
-F;airac\vor.VOR
+F;airac\vor.vor
 [HIGH AIRWAY]
 F;airac\awhigh.awh
 [LOW AIRWAY]
@@ -35,6 +35,9 @@ F;airspace\kzak_w_ctr.artcc
 \\F;airspace\cenrap.artcc
 [ARTCC LOW]
 [GEO]
-F;geo\coast.geo
+F;geo\coast_nw.geo
+F;geo\coast_cw.geo
+F;geo\coast_e.geo
+F;geo\coast_s.geo
 
 F;geo\warning.geo

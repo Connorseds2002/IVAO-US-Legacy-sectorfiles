@@ -38,7 +38,7 @@ F;airac\fixes2.fix
 F;airac\ndb.ndb
 
 [VOR]
-F;airac\vor.VOR
+F;airac\vor.vor
 
 [HIGH AIRWAY]
 F;airac\awhigh.awh
@@ -50,7 +50,7 @@ F;airac\awlow.awl
 F;airspace\kzjx.artcc
 
 [ARTCC HIGH]
-F;geo\disney_tfr.geo
+//F;geo\disney_tfr.geo
 
 [ARTCC LOW]
 F;airspace\class b.artcc
@@ -78,13 +78,13 @@ F;app\myr.geo
 F;app\nbc.geo
 F;app\ozr.geo
 F;app\pam.geo
-F;app\sav.geo
+//F;app\sav.geo
 F;app\ssc.geo
-F;app\tlh.geo
-F;app\tpa.geo
+//F;app\tlh.geo
+//F;app\tpa.geo
 f:app\vld.geo
-f:app\vps.geo
-f:app\tpa.geo
+//f:app\vps.geo
+//f:app\tpa.geo
 F;app\other.geo
 
 [FILLCOLOR]

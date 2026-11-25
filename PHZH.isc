@@ -41,7 +41,7 @@ F;airac\fixes.fix
 F;airac\ndb.ndb
 
 [VOR]
-F;airac\vor.VOR
+F;airac\vor.vor
 
 [HIGH AIRWAY]
 F;airac\awhigh.awh
@@ -66,8 +66,8 @@ F;geo\restrict.geo
 F;geo\warning.geo
 
 //app rvm
-F;app\hnl_rvm.geo
-F;app\ogg_rvm.geo
-F;app\ito_rvm.geo
-F;app\ngf_rvm.geo
+//F;app\hnl_rvm.geo
+//F;app\ogg_rvm.geo
+//F;app\ito_rvm.geo
+//F;app\ngf_rvm.geo
 

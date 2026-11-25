@@ -65,13 +65,13 @@ F;airac\awlow.awl
 F;airspace\kzab.artcc
 
 [ARTCC HIGH]
-F;airspace\kzab_app.artcc
-F;airspace\kphx_twr.artcc
-F;airspace\kelp.artcc
-F;airspace\kabq_twr.artcc
-F;airspace\kama_twr.artcc
-F;airspace\kdma_twr.artcc
-F;airspace\ktus_twr.artcc
+//F;airspace\kzab_app.artcc
+//F;airspace\kphx_twr.artcc
+//F;airspace\kelp.artcc
+//F;airspace\kabq_twr.artcc
+//F;airspace\kama_twr.artcc
+//F;airspace\kdma_twr.artcc
+//F;airspace\ktus_twr.artcc
 
 [ARTCC LOW]
 F;airspace\class b.artcc
@@ -82,7 +82,7 @@ F;airspace\class d.artcc
 F;GEO\kzab.geo
 F;GEO\moa.geo
 F;GEO\restrict.geo
-F;geo\prohibit.geo
+F;GEO\prohibit.geo
 
 //airport taxi/park lines
 F;ad\kphx.geo
@@ -92,22 +92,22 @@ F;ad\kelp.geo
 F;ad\ktus.geo
 
 //approaches
-F;app\p50 east.geo
-F;app\p50 west.geo
-F;app\kphx twr east.geo
-F;app\kphx twr west.geo
-F;app\u90 northwest.geo
-F;app\u90 southeast.geo
-F;app\kabq east.geo
-F;app\kabq west.geo
-F;app\kabq northeast.geo
-F;app\kabq southwest.geo
-F;app\kabq tower.geo
+//F;app\p50 east.geo
+//F;app\p50 west.geo
+//F;app\kphx twr east.geo
+//F;app\kphx twr west.geo
+//F;app\u90 northwest.geo
+//F;app\u90 southeast.geo
+//F;app\kabq east.geo
+//F;app\kabq west.geo
+//F;app\kabq northeast.geo
+//F;app\kabq southwest.geo
+//F;app\kabq tower.geo
 
-F;app\kama rwy 4.geo
-F;app\kama rwy 22.geo
-F;app\kelp tracon.geo
-F;app\khmn tracon.geo
-F;app\kluf rapcon.geo
-F;app\krow tracon.geo
+//F;app\kama rwy 4.geo
+//F;app\kama rwy 22.geo
+//F;app\kelp tracon.geo
+//F;app\khmn tracon.geo
+//F;app\kluf rapcon.geo
+//F;app\krow tracon.geo
 

@@ -97,23 +97,23 @@ F;ad\klex.geo
 F;ad\ksdf.geo
 
 //add
-F;app\kcvg south.geo
-F;app\kcvg north.geo
-F;app\kcvg west.geo
-F;app\kcvg east.geo
-F;app\kcmh west.geo
-F;app\kcmh east.geo
-F;app\kday tracon.geo
-F;app\kcrw tracon.geo
-F;app\kind northeast.geo
-F;app\kind southeast.geo
-F;app\kind northwest.geo
-F;app\kind southwest.geo
-F;app\ksdf north.geo
-F;app\ksdf south.geo
-F;app\ksdf west.geo
-F;app\kevv tracon.geo
-F;app\khuf tracon.geo
-F;app\klex tracon.geo
-F;app\khts trsa.geo
+//F;app\kcvg south.geo
+//F;app\kcvg north.geo
+//F;app\kcvg west.geo
+//F;app\kcvg east.geo
+//F;app\kcmh west.geo
+//F;app\kcmh east.geo
+//F;app\kday tracon.geo
+//F;app\kcrw tracon.geo
+//F;app\kind northeast.geo
+//F;app\kind southeast.geo
+//F;app\kind northwest.geo
+//F;app\kind southwest.geo
+//F;app\ksdf north.geo
+//F;app\ksdf south.geo
+//F;app\ksdf west.geo
+//F;app\kevv tracon.geo
+//F;app\khuf tracon.geo
+//F;app\klex tracon.geo
+//F;app\khts trsa.geo
 

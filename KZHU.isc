@@ -62,8 +62,8 @@ F;ARTCC\kcll_app.artcc
 F;ARTCC\kcrp_app.artcc
 F;ARTCC\kdlf_app.artcc
 F;ARTCC\kgpt_app.artcc
-F;ARTCC\kgrk_app.artcc
-F;ARTCC\khou_app.artcc
+//F;ARTCC\kgrk_app.artcc
+//F;ARTCC\khou_app.artcc
 F;ARTCC\klft_app.artcc
 F;ARTCC\klch_app.artcc
 F;ARTCC\kmob_app.artcc
@@ -72,12 +72,12 @@ F;ARTCC\ksat_app.artcc
 F;ARTCC\knqi_app.artcc
 F;ARTCC\kpoe_app.artcc
 [ARTCC LOW]
-F;artcc\class b.artcc
-F;artcc\class c.artcc
-F;artcc\class d.artcc
-F;artcc\kbpt trsa.artcc
-F;artcc\klch trsa.artcc
-F;artcc\kgpt trsa.artcc
+F;ARTCC\class b.artcc
+F;ARTCC\class c.artcc
+F;ARTCC\class d.artcc
+F;ARTCC\kbpt trsa.artcc
+F;ARTCC\klch trsa.artcc
+F;ARTCC\kgpt trsa.artcc
 [GEO]
 F;kiah.geo
 //F;app\tracons.geo
@@ -85,6 +85,6 @@ F;GEO\coast.geo
 F;GEO\moa.geo
 F;GEO\restrict.geo
 F;GEO\warning.geo
-F;geo\prohibit.geo
+F;GEO\prohibit.geo
 
 

@@ -66,7 +66,7 @@ F;kzjx\airac\ndb.ndb
 
 [VOR]
 F;kzma\airac\vor.vor
-F;kzjx\airac\vor.VOR
+F;kzjx\airac\vor.vor
 
 [HIGH AIRWAY]
 F;kzma\airac\awhigh.awh
@@ -82,6 +82,7 @@ F;kzjx\airspace\kzjx.artcc
 
 [ARTCC HIGH]
 F;kzma\airspace\kzma_high.artcc
+//F;kzjx\geo\disney_tfr.geo
 
 [ARTCC LOW]
 F;kzma\airspace\Class B.artcc
@@ -139,8 +140,12 @@ F;kzjx\app\myr.geo
 F;kzjx\app\nbc.geo
 F;kzjx\app\ozr.geo
 F;kzjx\app\pam.geo
+//F;kzjx\app\sav.geo
 F;kzjx\app\ssc.geo
+//F;kzjx\app\tlh.geo
+//F;kzjx\app\tpa.geo
 F;kzjx\app\vld.geo
+//F;kzjx\app\vps.geo
 F;kzjx\app\other.geo
 
 [FILLCOLOR]

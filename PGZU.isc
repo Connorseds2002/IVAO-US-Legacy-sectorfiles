@@ -32,16 +32,16 @@ F;airac\fixes.fix
 F;airac\ndb.ndb
 
 [VOR]
-F;airac\vor.VOR
+F;airac\vor.vor
 
 [HIGH AIRWAY]
 F;airac\awhigh.awh
 
 [LOW AIRWAY]
-F;airac\awlow.awl
+F;airac\awlow.AWL
 
 [ARTCC]
-F;artcc\pgzu.artcc
+F;ARTCC\pgzu.artcc
 
 [GEO]
-F;geo\pgzu.geo
+F;GEO\pgzu.geo
