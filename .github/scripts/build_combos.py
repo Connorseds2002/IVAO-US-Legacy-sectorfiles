@@ -140,6 +140,68 @@ def find_file(base, rel):
     return cur if os.path.isfile(cur) else None
 
 
+# AIRAC point files: name -> (fields forming the key, lat field, lon field).
+# A later ARTCC's line is dropped when an earlier ARTCC has the same key at
+# (nearly) the same position; same name somewhere else is a different point.
+AIRAC_KEYS = {
+    "airports.ap": ((0,), 3, 4),
+    "runways.rw": ((0, 1, 2), 7, 8),
+    "vor.vor": ((0, 1), 2, 3),
+    "ndb.ndb": ((0, 1), 2, 3),
+    "fixes.fix": ((0,), 1, 2),
+}
+SAME_POINT_NM = 1.0
+
+
+def airac_entry(line, spec):
+    """(key, (lat, lon)) for a data line, or None for comments/blank/odd lines."""
+    if not line.strip() or line.lstrip().startswith("//"):
+        return None
+    fields = [f.strip() for f in line.split("//")[0].split(";")]
+    idx, la, lo = spec
+    if len(fields) <= max(max(idx), la, lo):
+        return None
+    try:
+        pos = (dms(fields[la]), dms(fields[lo]))
+    except (ValueError, IndexError):
+        return None
+    key = tuple(fields[i].upper() for i in idx)
+    if fields[0].upper() == "KEY" or not key[0]:
+        return None
+    return key, pos
+
+
+def near(a, b):
+    dlat = (a[0] - b[0]) * 60
+    dlon = (a[1] - b[1]) * 60 * math.cos(math.radians(a[0]))
+    return math.hypot(dlat, dlon) <= SAME_POINT_NM
+
+
+def dedupe_airac(out, facs):
+    warnings, seen = [], {name: {} for name in AIRAC_KEYS}
+    for n, fac in enumerate(facs):
+        for name, spec in AIRAC_KEYS.items():
+            path = find_file(os.path.join(out, fac), "airac\\" + name)
+            if not path:
+                continue
+            lines, kept, dropped = read(path), [], 0
+            for line in lines:
+                e = airac_entry(line, spec)
+                if e and n and any(near(e[1], p) for p in seen[name].get(e[0], ())):
+                    dropped += 1
+                    continue
+                kept.append(line)
+            for line in kept:
+                e = airac_entry(line, spec)
+                if e:
+                    seen[name].setdefault(e[0], []).append(e[1])
+            if dropped:
+                with open(path, "w", encoding="latin-1", newline="\n") as fh:
+                    fh.write("\n".join(kept) + "\n")
+                print(f"  {fac}/airac/{name}: {dropped} entries already in an earlier ARTCC, dropped", file=sys.stderr)
+    return warnings
+
+
 def build(combo):
     out = os.path.join(US, combo["folder"])
     if os.path.isdir(out):
@@ -171,6 +233,12 @@ def build(combo):
                 hit = find_file(src, rel)
                 if hit:
                     shutil.copy2(hit, os.path.join(dst, os.path.basename(hit)))
+
+    # 1b. Each ARTCC's AIRAC files list some neighbouring airports, navaids and
+    # fixes too (ZOA's airports.ap has KLAX, KBUR, KSNA). Loaded side by side
+    # they would show twice in Aurora, so drop from later ARTCCs whatever an
+    # earlier one already has.
+    warnings.extend(dedupe_airac(out, [fac for _, fac in combo["sources"]]))
 
     # 2. Per-airport files at the folder root, plus merged ATC list.
     placed = {}
