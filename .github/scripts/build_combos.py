@@ -46,17 +46,17 @@ COMBOS = [
         # Every airport both ARTCCs list (airports.ap or per-airport files)
         # is taken only from its owner: the FAA NASR responsible ARTCC.
         "owners": {
-            # ZJX (38)
+            # ZJX (39)
             "0fa5": "kzjx", "0fa9": "kzjx", "10fa": "kzjx", "1j6": "kzjx",
             "22fl": "kzjx", "25fd": "kzjx", "2j8": "kzjx", "3fa8": "kzjx",
             "7fl6": "kzjx", "8fa4": "kzjx", "f15": "kzjx", "fa83": "kzjx",
-            "fd43": "kzjx", "fd68": "kzjx", "fd69": "kzjx", "kcgc": "kzjx",
-            "kcof": "kzjx", "kdab": "kzjx", "kded": "kzjx", "kevb": "kzjx",
-            "kfin": "kzjx", "kinf": "kzjx", "kism": "kzjx", "klee": "kzjx",
-            "kmco": "kzjx", "kmlb": "kzjx", "komn": "kzjx", "korl": "kzjx",
-            "ksfb": "kzjx", "ktix": "kzjx", "ktts": "kzjx", "kxmr": "kzjx",
-            "x04": "kzjx", "x21": "kzjx", "x23": "kzjx", "x50": "kzjx",
-            "x55": "kzjx", "x61": "kzjx",
+            "fd43": "kzjx", "fd68": "kzjx", "fd69": "kzjx", "fl15": "kzjx",
+            "kcgc": "kzjx", "kcof": "kzjx", "kdab": "kzjx", "kded": "kzjx",
+            "kevb": "kzjx", "kfin": "kzjx", "kinf": "kzjx", "kism": "kzjx",
+            "klee": "kzjx", "kmco": "kzjx", "kmlb": "kzjx", "komn": "kzjx",
+            "korl": "kzjx", "ksfb": "kzjx", "ktix": "kzjx", "ktts": "kzjx",
+            "kxmr": "kzjx", "x04": "kzjx", "x21": "kzjx", "x23": "kzjx",
+            "x50": "kzjx", "x55": "kzjx", "x61": "kzjx",
             # ZMA (22)
             "47fl": "kzma", "4fd7": "kzma", "57fl": "kzma", "fa40": "kzma",
             "fa84": "kzma", "fd59": "kzma", "fl35": "kzma", "kapf": "kzma",
@@ -71,8 +71,8 @@ COMBOS = [
         "folder": "kzla_kzoa",
         "sources": [("KZLA Los Angeles ARTCC.isc", "kzla"), ("KZOA.isc", "kzoa")],
         "owners": {
-            # ZLA (3)
-            "kbur": "kzla", "klax": "kzla", "ksna": "kzla",
+            # ZLA (4)
+            "1a8": "kzla", "kbur": "kzla", "klax": "kzla", "ksna": "kzla",
         },
     },
 ]
