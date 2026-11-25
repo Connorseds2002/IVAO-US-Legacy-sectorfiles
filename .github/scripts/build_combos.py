@@ -43,27 +43,34 @@ COMBOS = [
         "isc": "KZMA_KZJX Miami-Jacksonville combined.isc",
         "folder": "kzma_kzjx",
         "sources": [("KZMA.isc", "kzma"), ("KZJX.isc", "kzjx")],
-        # Every airport both ARTCCs list (airports.ap or per-airport files)
-        # is taken only from its owner: the FAA NASR responsible ARTCC.
+        # Owner of every airport both ARTCCs list (airports.ap or per-airport
+        # files), and of neighbour airports one ARTCC lists that belong to the
+        # other: the FAA NASR responsible ARTCC (matched by ID and position).
+        # Shared airports come only from their owner. 1J6 is not in NASR; it
+        # lies inside ZJX's FAA boundary.
         "owners": {
-            # ZJX (39)
-            "0fa5": "kzjx", "0fa9": "kzjx", "10fa": "kzjx", "1j6": "kzjx",
-            "22fl": "kzjx", "25fd": "kzjx", "2j8": "kzjx", "3fa8": "kzjx",
-            "7fl6": "kzjx", "8fa4": "kzjx", "f15": "kzjx", "fa83": "kzjx",
-            "fd43": "kzjx", "fd68": "kzjx", "fd69": "kzjx", "fl15": "kzjx",
-            "kcgc": "kzjx", "kcof": "kzjx", "kdab": "kzjx", "kded": "kzjx",
-            "kevb": "kzjx", "kfin": "kzjx", "kinf": "kzjx", "kism": "kzjx",
-            "klee": "kzjx", "kmco": "kzjx", "kmlb": "kzjx", "komn": "kzjx",
-            "korl": "kzjx", "ksfb": "kzjx", "ktix": "kzjx", "ktts": "kzjx",
-            "kxmr": "kzjx", "x04": "kzjx", "x21": "kzjx", "x23": "kzjx",
-            "x50": "kzjx", "x55": "kzjx", "x61": "kzjx",
-            # ZMA (22)
+            # ZMA, listed by both (22)
             "47fl": "kzma", "4fd7": "kzma", "57fl": "kzma", "fa40": "kzma",
             "fa84": "kzma", "fd59": "kzma", "fl35": "kzma", "kapf": "kzma",
-            "kbkv": "kzma", "kclw": "kzma", "kfll": "kzma", "kfxe": "kzma",
-            "kmia": "kzma", "kopf": "kzma", "kpbi": "kzma", "krsw": "kzma",
+            "kbkv": "kzma", "kclw": "kzma", "kdjt": "kzma", "kfll": "kzma",
+            "kfxe": "kzma", "kmia": "kzma", "kopf": "kzma", "krsw": "kzma",
             "ktmb": "kzma", "ktpa": "kzma", "kvdf": "kzma", "kzph": "kzma",
             "x05": "kzma", "x39": "kzma",
+            # ZJX, listed by both (39)
+            "0fa5": "kzjx", "0fa9": "kzjx", "10fa": "kzjx", "1j6": "kzjx",
+            "25fd": "kzjx", "2j8": "kzjx", "3fa8": "kzjx", "7fl6": "kzjx",
+            "8fa4": "kzjx", "f15": "kzjx", "fa83": "kzjx", "fd43": "kzjx",
+            "fd68": "kzjx", "fd69": "kzjx", "fl15": "kzjx", "kcgc": "kzjx",
+            "kcof": "kzjx", "kdab": "kzjx", "kded": "kzjx", "kevb": "kzjx",
+            "kfin": "kzjx", "kinf": "kzjx", "kism": "kzjx", "klee": "kzjx",
+            "kmco": "kzjx", "kmlb": "kzjx", "komn": "kzjx", "korl": "kzjx",
+            "ksfb": "kzjx", "ktix": "kzjx", "ktts": "kzjx", "kxmr": "kzjx",
+            "x04": "kzjx", "x21": "kzjx", "x23": "kzjx", "x50": "kzjx",
+            "x55": "kzjx", "x59": "kzjx", "x61": "kzjx",
+            # ZJX, listed only by ZMA (11)
+            "02fa": "kzjx", "06fd": "kzjx", "2fa1": "kzjx", "3fl": "kzjx",
+            "4fa7": "kzjx", "54fd": "kzjx", "97fl": "kzjx", "fa13": "kzjx",
+            "fa94": "kzjx", "fd21": "kzjx", "kcoi": "kzjx",
         },
     },
     {
@@ -71,8 +78,10 @@ COMBOS = [
         "folder": "kzla_kzoa",
         "sources": [("KZLA Los Angeles ARTCC.isc", "kzla"), ("KZOA.isc", "kzoa")],
         "owners": {
-            # ZLA (4)
+            # ZLA, listed by both (4)
             "1a8": "kzla", "kbur": "kzla", "klax": "kzla", "ksna": "kzla",
+            # ZLA, listed only by ZOA (1)
+            "0l4": "kzla",
         },
     },
 ]
