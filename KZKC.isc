@@ -66,18 +66,18 @@ F;airspace\kzkc.artcc
 
 [ARTCC HIGH]
 F;airspace\kzkc_app.artcc
-F;airspace\kzkc_twr.artcc
+//F;airspace\kzkc_twr.artcc
 
 [ARTCC LOW]
-F;airspace\kzkc_low.artcc
+//F;airspace\kzkc_low.artcc
 F;airspace\class b.artcc
 F;airspace\class c.artcc
 F;airspace\class d.artcc
-F;airspace\trsa.artcc
+//F;airspace\trsa.artcc
 
 [GEO]
-F;GEO\moa.geo
-F;GEO\restrict.geo
+F;geo\moa.geo
+F;geo\restrict.geo
 
 //ad
 F;ad\kblv.geo

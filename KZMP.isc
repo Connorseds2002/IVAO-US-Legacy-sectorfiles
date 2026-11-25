@@ -83,8 +83,8 @@ F;airspace\class c.artcc
 F;airspace\class d.artcc
 
 [GEO]
-F;GEO\moa.geo
-F;GEO\restrict.geo
+F;geo\moa.geo
+F;geo\restrict.geo
 F;geo\prohibit.geo
 
 //airport taxilines
@@ -96,34 +96,34 @@ F;ad\koma.geo
 F;ad\kbis.geo
 F;ad\kdlh.geo
 
-F;app\kmsprwy12.geo
-F;app\kmsprwy17.geo
-F;app\kmsprwy4.geo
-F;app\kmsprwy22.geo
-F;app\kmsprwy30.geo
-F;app\kmsprwy12-17.geo
-F;app\kmsprwy35.geo
-F;app\kmsprwy17-22.geo
-F;app\kmsprwy30-17.geo
-F;app\kmsprwy30-35.geo
-F;app\kmspvfr.geo
-F;app\r90north.geo
-F;app\r90south.geo
-F;app\kdsm north.geo
-F;app\kdsm south.geo
-F;app\kdsm east.geo
-F;app\kdsm west.geo
-F;app\krst tracon.geo
-F;app\kbis east.geo
-F;app\kbis west.geo
-F;app\kfsd tracon.geo
-F;app\ksux north.geo
-F;app\ksux south.geo
-F;app\kdlh tracon.geo
-F;app\kfar rwy18.geo
-F;app\kfar rwy36.geo
-F;app\kgrb tracon.geo
-F;app\klnk north.geo
-F;app\klnk south.geo
+//F;app\kmsprwy12.geo
+//F;app\kmsprwy17.geo
+//F;app\kmsprwy4.geo
+//F;app\kmsprwy22.geo
+//F;app\kmsprwy30.geo
+//F;app\kmsprwy12-17.geo
+//F;app\kmsprwy35.geo
+//F;app\kmsprwy17-22.geo
+//F;app\kmsprwy30-17.geo
+//F;app\kmsprwy30-35.geo
+//F;app\kmspvfr.geo
+//F;app\r90north.geo
+//F;app\r90south.geo
+//F;app\kdsm north.geo
+//F;app\kdsm south.geo
+//F;app\kdsm east.geo
+//F;app\kdsm west.geo
+//F;app\krst tracon.geo
+//F;app\kbis east.geo
+//F;app\kbis west.geo
+//F;app\kfsd tracon.geo
+//F;app\ksux north.geo
+//F;app\ksux south.geo
+//F;app\kdlh tracon.geo
+//F;app\kfar rwy18.geo
+//F;app\kfar rwy36.geo
+//F;app\kgrb tracon.geo
+//F;app\klnk north.geo
+//F;app\klnk south.geo
 
 

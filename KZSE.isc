@@ -53,7 +53,7 @@ F;airspace\kgeg_app.artcc
 F;airspace\klmt_app.artcc
 F;airspace\kmfr_app.artcc
 F;airspace\kmwh_app.artcc
-F;airspace\knuc_app.artcc
+//F;airspace\knuc_app.artcc
 F;airspace\kpsc_app.artcc
 F;airspace\kykm_app.artcc
 F;airspace\cyvr_app.artcc
@@ -64,11 +64,11 @@ F;airspace\class_c.artcc
 F;airspace\class_d.artcc
 
 [GEO]
-F;geo\coast.geo
-F;geo\ksea_txc.geo
-F;geo\moa.geo
-F;geo\warning.geo
-F;geo\restrict.geo
+F;GEO\coast.geo
+F;GEO\ksea_txc.geo
+F;GEO\moa.geo
+F;GEO\warning.geo
+F;GEO\restrict.geo
 
 //parking lines
 F;ad\ksea.geo

@@ -67,12 +67,12 @@ F;geo\restrict.geo
 F;geo\warning.geo
 F;geo\prohibit.geo
 
-F;app\nct_northeast.geo
-F;app\nct_westsouth.geo
-F;app\kfat11.geo
-F;app\kfat29.geo
-F;app\ksuu sfoe.geo
-F;app\ksuu sfow.geo
+//F;app\nct_northeast.geo
+//F;app\nct_westsouth.geo
+//F;app\kfat11.geo
+//F;app\kfat29.geo
+//F;app\ksuu sfoe.geo
+//F;app\ksuu sfow.geo
 
 F;ad\ksfo.geo
 F;ad\kfch.geo
@@ -80,4 +80,4 @@ F;ad\ksfo_ctrlines.geo
 F;ad\ksfo_stopbar.geo
 F;ad\ksfo_labels.geo
 
-F;airspace\nct_mva.geo
+//F;airspace\nct_mva.geo

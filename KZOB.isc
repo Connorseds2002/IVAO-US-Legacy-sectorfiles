@@ -91,30 +91,30 @@ F;ad\kpit.geo
 F;ad\kroc.geo
 F;ad\ktol.geo
 //app
-F;app\grt lake - fnt.geo
-F;app\grt lake - lane.geo
-F;app\grt lake - lanw.geo
-F;app\grt lake - mbs.geo
-F;app\kbuf rwy5.geo
-F;app\kbuf rwy14.geo
-F;app\kbuf rwy23.geo
-F;app\kbuf rwy32.geo
-F;app\kcak tracon.geo
-F;app\kckb tracon.geo
-F;app\kcle rwy6.geo
-F;app\kcle rwy24.geo
-F;app\kcle rwy28.geo
-F;app\kdtw d21 north.geo
-F;app\kdtw d21 south.geo
-F;app\kdtw d21 west.geo
-F;app\keri tracon.geo
-F;app\kmfd tracon.geo
-F;app\kpit rwy10.geo
-F;app\kpit rwy28.geo
-F;app\kroc rwy4.geo
-F;app\kroc rwy22.geo
-F;app\ktol tracon.geo
-F;app\kyng tracon.geo
+//F;app\grt lake - fnt.geo
+//F;app\grt lake - lane.geo
+//F;app\grt lake - lanw.geo
+//F;app\grt lake - mbs.geo
+//F;app\kbuf rwy5.geo
+//F;app\kbuf rwy14.geo
+//F;app\kbuf rwy23.geo
+//F;app\kbuf rwy32.geo
+//F;app\kcak tracon.geo
+//F;app\kckb tracon.geo
+//F;app\kcle rwy6.geo
+//F;app\kcle rwy24.geo
+//F;app\kcle rwy28.geo
+//F;app\kdtw d21 north.geo
+//F;app\kdtw d21 south.geo
+//F;app\kdtw d21 west.geo
+//F;app\keri tracon.geo
+//F;app\kmfd tracon.geo
+//F;app\kpit rwy10.geo
+//F;app\kpit rwy28.geo
+//F;app\kroc rwy4.geo
+//F;app\kroc rwy22.geo
+//F;app\ktol tracon.geo
+//F;app\kyng tracon.geo
 
 [FILLCOLOR]
 F;airspace\kzob_aor.tfl

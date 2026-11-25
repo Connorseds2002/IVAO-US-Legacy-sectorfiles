@@ -76,16 +76,16 @@ F;ad\kslc.geo
 F;ad\kbil.geo
 F;ad\kboi.geo
 //app
-F;app\kslc north.geo
-F;app\kslc south.geo
-F;app\kbil east.geo
-F;app\kbil west.geo
-F;app\kboi east.geo
-F;app\kboi west.geo
-F;app\kbzn east.geo
-F;app\kbzn west.geo
-F;app\kgtf north.geo
-F;app\kgtf south.geo
-F;app\kmso east.geo
-F;app\kmso west.geo
+//F;app\kslc north.geo
+//F;app\kslc south.geo
+//F;app\kbil east.geo
+//F;app\kbil west.geo
+//F;app\kboi east.geo
+//F;app\kboi west.geo
+//F;app\kbzn east.geo
+//F;app\kbzn west.geo
+//F;app\kgtf north.geo
+//F;app\kgtf south.geo
+//F;app\kmso east.geo
+//F;app\kmso west.geo
 

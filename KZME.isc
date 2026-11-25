@@ -61,9 +61,9 @@ F;airspace\class c.artcc
 F;airspace\class d.artcc
 
 [GEO]
-F;GEO\coast.geo
-F;GEO\moa.geo
-F;GEO\restrict.geo
+F;geo\coast.geo
+F;geo\moa.geo
+F;geo\restrict.geo
 
 //APP
 F;app\kmem_app.geo

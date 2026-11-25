@@ -65,7 +65,7 @@ F;airspace\kcpr app.artcc
 F;airspace\kpub app.artcc
 
 [ARTCC LOW]
-F;airspace\kzdv_low.artcc
+//F;airspace\kzdv_low.artcc
 F;airspace\class b.artcc
 F;airspace\class c.artcc
 F;airspace\class d.artcc
