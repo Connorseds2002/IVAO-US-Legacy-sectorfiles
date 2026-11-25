@@ -153,6 +153,14 @@ AIRAC_KEYS = {
 SAME_POINT_NM = 1.0
 
 
+def norm_field(value):
+    """Upper-case text; numbers compared by value so 115.00 == 115.000."""
+    try:
+        return f"{float(value):g}"
+    except ValueError:
+        return value.upper()
+
+
 def airac_entry(line, spec):
     """(key, (lat, lon)) for a data line, or None for comments/blank/odd lines."""
     if not line.strip() or line.lstrip().startswith("//"):
@@ -165,7 +173,7 @@ def airac_entry(line, spec):
         pos = (dms(fields[la]), dms(fields[lo]))
     except (ValueError, IndexError):
         return None
-    key = tuple(fields[i].upper() for i in idx)
+    key = tuple(norm_field(fields[i]) for i in idx)
     if fields[0].upper() == "KEY" or not key[0]:
         return None
     return key, pos
