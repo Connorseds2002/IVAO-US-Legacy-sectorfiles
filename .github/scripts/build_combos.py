@@ -43,22 +43,37 @@ COMBOS = [
         "isc": "KZMA_KZJX Miami-Jacksonville combined.isc",
         "folder": "kzma_kzjx",
         "sources": [("KZMA.isc", "kzma"), ("KZJX.isc", "kzjx")],
-        # Airports whose per-airport files differ between the two folders:
-        # take that airport's files from the ARTCC that owns it.
+        # Every airport both ARTCCs list (airports.ap or per-airport files)
+        # is taken only from its owner: the FAA NASR responsible ARTCC.
         "owners": {
-            "kmia": "kzma",
-            "ktpa": "kzjx",
-            "kcof": "kzjx",
-            "kism": "kzjx",
-            "ktix": "kzjx",
-            "kmlb": "kzjx",
+            # ZJX (38)
+            "0fa5": "kzjx", "0fa9": "kzjx", "10fa": "kzjx", "1j6": "kzjx",
+            "22fl": "kzjx", "25fd": "kzjx", "2j8": "kzjx", "3fa8": "kzjx",
+            "7fl6": "kzjx", "8fa4": "kzjx", "f15": "kzjx", "fa83": "kzjx",
+            "fd43": "kzjx", "fd68": "kzjx", "fd69": "kzjx", "kcgc": "kzjx",
+            "kcof": "kzjx", "kdab": "kzjx", "kded": "kzjx", "kevb": "kzjx",
+            "kfin": "kzjx", "kinf": "kzjx", "kism": "kzjx", "klee": "kzjx",
+            "kmco": "kzjx", "kmlb": "kzjx", "komn": "kzjx", "korl": "kzjx",
+            "ksfb": "kzjx", "ktix": "kzjx", "ktts": "kzjx", "kxmr": "kzjx",
+            "x04": "kzjx", "x21": "kzjx", "x23": "kzjx", "x50": "kzjx",
+            "x55": "kzjx", "x61": "kzjx",
+            # ZMA (22)
+            "47fl": "kzma", "4fd7": "kzma", "57fl": "kzma", "fa40": "kzma",
+            "fa84": "kzma", "fd59": "kzma", "fl35": "kzma", "kapf": "kzma",
+            "kbkv": "kzma", "kclw": "kzma", "kfll": "kzma", "kfxe": "kzma",
+            "kmia": "kzma", "kopf": "kzma", "kpbi": "kzma", "krsw": "kzma",
+            "ktmb": "kzma", "ktpa": "kzma", "kvdf": "kzma", "kzph": "kzma",
+            "x05": "kzma", "x39": "kzma",
         },
     },
     {
         "isc": "KZLA_KZOA Los Angeles-Oakland combined.isc",
         "folder": "kzla_kzoa",
         "sources": [("KZLA Los Angeles ARTCC.isc", "kzla"), ("KZOA.isc", "kzoa")],
-        "owners": {},
+        "owners": {
+            # ZLA (3)
+            "kbur": "kzla", "klax": "kzla", "ksna": "kzla",
+        },
     },
 ]
 
@@ -185,8 +200,24 @@ def near(a, b):
     return math.hypot(dlat, dlon) <= SAME_POINT_NM
 
 
-def dedupe_airac(out, facs):
+# Files whose first field is the airport, so owners decides who keeps them.
+AIRPORT_KEYED = ("airports.ap", "runways.rw")
+
+
+def dedupe_airac(out, facs, owners):
+    """Load each shared point once. Airports and their runways come only from
+    the owning ARTCC (owners); everything else from the first ARTCC that has it."""
     warnings, seen = [], {name: {} for name in AIRAC_KEYS}
+    listed = {}
+    for fac in facs:
+        path = find_file(os.path.join(out, fac), "airac\\airports.ap")
+        for line in read(path) if path else []:
+            e = airac_entry(line, AIRAC_KEYS["airports.ap"])
+            if e:
+                listed.setdefault(e[0][0].lower(), set()).add(fac)
+    for icao, facs_with in sorted(listed.items()):
+        if len(facs_with) > 1 and icao not in owners:
+            warnings.append(f"{icao.upper()}: in {' and '.join(sorted(facs_with))} airports.ap but has no owner, kept {facs[0]}")
     for n, fac in enumerate(facs):
         for name, spec in AIRAC_KEYS.items():
             path = find_file(os.path.join(out, fac), "airac\\" + name)
@@ -195,6 +226,14 @@ def dedupe_airac(out, facs):
             lines, kept, dropped = read(path), [], 0
             for line in lines:
                 e = airac_entry(line, spec)
+                if e and name in AIRPORT_KEYED:
+                    owner = owners.get(e[0][0].lower())
+                    if owner and owner != fac and owner in facs and len(listed.get(e[0][0].lower(), ())) > 1:
+                        dropped += 1
+                        continue
+                    if owner:
+                        kept.append(line)
+                        continue
                 if e and n and any(near(e[1], p) for p in seen[name].get(e[0], ())):
                     dropped += 1
                     continue
@@ -206,7 +245,7 @@ def dedupe_airac(out, facs):
             if dropped:
                 with open(path, "w", encoding="latin-1", newline="\n") as fh:
                     fh.write("\n".join(kept) + "\n")
-                print(f"  {fac}/airac/{name}: {dropped} entries already in an earlier ARTCC, dropped", file=sys.stderr)
+                print(f"  {fac}/airac/{name}: {dropped} duplicate entries dropped (other ARTCC or owner has them)", file=sys.stderr)
     return warnings
 
 
@@ -246,7 +285,7 @@ def build(combo):
     # fixes too (ZOA's airports.ap has KLAX, KBUR, KSNA). Loaded side by side
     # they would show twice in Aurora, so drop from later ARTCCs whatever an
     # earlier one already has.
-    warnings.extend(dedupe_airac(out, [fac for _, fac in combo["sources"]]))
+    warnings.extend(dedupe_airac(out, [fac for _, fac in combo["sources"]], combo["owners"]))
 
     # 2. Per-airport files at the folder root, plus merged ATC list.
     placed = {}
